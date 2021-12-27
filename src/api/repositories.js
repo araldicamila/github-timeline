@@ -5,5 +5,5 @@ export const getUserRepos = async (user) => {
     params: { sort: "created" },
   });
 
-  return response.data;
+  return response;
 };
