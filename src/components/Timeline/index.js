@@ -1,5 +1,5 @@
 import { TimelineItem } from "../TimelineItem";
-import { TimelineContainer } from "./styles";
+import { TimelineBar, TimelineContainer } from "./styles";
 
 export const Timeline = ({ list }) => {
   return (

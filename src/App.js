@@ -8,8 +8,10 @@ function App() {
   const [user, setUser] = useState("");
   const [repositories, setRepositories] = useState([]);
 
+  const [showTimeline, setShowTimeline] = useState(false);
+
   const getRepositories = () => {
-    getUserRepos("araldicami").then((response) => {
+    getUserRepos(user).then((response) => {
       if (response && response.data) {
         const repos = [];
 
@@ -22,19 +24,22 @@ function App() {
         });
 
         setRepositories(repos);
+        setShowTimeline(true);
       }
     });
   };
 
-  console.log(repositories);
-
-  useEffect(() => {
-    getRepositories();
-  }, []);
-
   return (
     <main>
-      <Timeline list={repositories} />
+      {!showTimeline ? (
+        <SearchUser
+          onClickSearch={getRepositories}
+          user={user}
+          setUser={setUser}
+        />
+      ) : (
+        <Timeline list={repositories} />
+      )}
     </main>
   );
 }

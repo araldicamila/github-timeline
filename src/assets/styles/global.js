@@ -4,6 +4,10 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --green: #2EA650;
     --white: #FFF;
+    --blue: #7DCBEB;
+    --purple: #A363DA;
+    --yellow: #FDCD7B;
+    --dark-background: #040D21;
   }
 
   body {
@@ -22,9 +26,10 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 
-  button, input {
+  time {
     font-family: 'Poppins', sans-serif;
   } 
 `;
