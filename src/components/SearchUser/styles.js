@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const ContainerSearchUser = styled.div`
   min-width: 500px;
@@ -7,6 +8,11 @@ export const ContainerSearchUser = styled.div`
   border: 1px solid #202637;
   padding: 1.5rem;
   border-radius: 6px;
+
+  ${media.lessThan("medium")`
+    max-width: 90%;
+    min-width: 200px;
+  `}
 
   span,
   input,
@@ -21,7 +27,7 @@ export const ContainerSearchUser = styled.div`
   }
 
   label {
-    color: #00cfc8;
+    color: var(--blue-text);
     font-weight: 600;
     display: block;
 
@@ -36,7 +42,7 @@ export const WrapperInput = styled.div`
   span {
     display: flex;
     align-items: center;
-    color: #ea4aaa;
+    color: var(--pink);
   }
 
   button {
@@ -64,5 +70,6 @@ export const WrapperInput = styled.div`
 
     caret-color: var(--white);
     color: var(--white);
+    ]font-size: 1rem;
   }
 `;

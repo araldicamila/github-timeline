@@ -8,6 +8,9 @@ export const GlobalStyle = createGlobalStyle`
     --purple: #A363DA;
     --yellow: #FDCD7B;
     --dark-background: #040D21;
+
+    --pink: #ea4aaa;
+    --blue-text: #00cfc8;
   }
 
   body {
@@ -18,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
 
     padding: 0;
     margin: 0;
+    background-color: #040D21;
   } 
   
   main {

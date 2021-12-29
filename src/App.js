@@ -17,11 +17,28 @@ function App() {
         const repos = [];
 
         response.data.map((item) => {
-          repos.push({
-            description: item.description,
-            created_at: item.created_at,
-            name: item.name,
-          });
+          const year = new Date(item.created_at).getFullYear();
+
+          const hasYear = repos.find((i) => i.year === year);
+
+          if (hasYear) {
+            hasYear.items.push({
+              description: item.description,
+              created_at: item.created_at,
+              name: item.name,
+            });
+          } else {
+            repos.push({
+              year: year,
+              items: [
+                {
+                  description: item.description,
+                  created_at: item.created_at,
+                  name: item.name,
+                },
+              ],
+            });
+          }
         });
 
         setRepositories(repos);
@@ -29,6 +46,8 @@ function App() {
       }
     });
   };
+
+  console.log(repositories);
 
   return (
     <main>
@@ -40,7 +59,10 @@ function App() {
         />
       ) : (
         <>
-          <HeaderTimeline username={user} />
+          <HeaderTimeline
+            username={user}
+            onClickBack={() => setShowTimeline(false)}
+          />
           <Timeline list={repositories} />
         </>
       )}

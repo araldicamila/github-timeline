@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const HeaderTimelineContainer = styled.div`
   padding: 1rem;
@@ -8,11 +9,17 @@ export const HeaderTimelineContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: absolute;
+  top: 0;
 
   h1 {
     color: var(--white);
     margin: 0 0.5rem 0;
     font-size: 2rem;
+
+    ${media.lessThan("medium")`
+      font-size: 1rem;
+    `}
   }
 
   span {
@@ -28,6 +35,9 @@ export const HeaderTimelineContainer = styled.div`
     background-color: transparent;
     border: 1px solid var(--white);
     color: var(--white);
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
     font-family: "Poppins", sans-serif;
 
     min-width: 100px;

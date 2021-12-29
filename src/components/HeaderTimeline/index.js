@@ -1,13 +1,13 @@
 import { HeaderTimelineContainer } from "./styled";
 
-export const HeaderTimeline = ({ username }) => {
+export const HeaderTimeline = ({ username, onClickBack }) => {
   return (
     <HeaderTimelineContainer>
       <span>
         →<h1>Hello, {username}</h1>
       </span>
 
-      <button>Back to home</button>
+      <button onClick={onClickBack}>Back to home</button>
     </HeaderTimelineContainer>
   );
 };

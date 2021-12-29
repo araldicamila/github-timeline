@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const TimelineItemList = styled.li`
   list-style-type: none;
@@ -13,8 +14,16 @@ export const TimelineItemList = styled.li`
     }
 
     &::before {
-      right: -83px;
+      right: -81px;
     }
+
+    ${media.lessThan("medium")`
+      right: 10px;
+
+      &::before {
+        right: -41px;
+      }
+    `}
   }
 
   &:nth-child(even) div {
@@ -25,8 +34,16 @@ export const TimelineItemList = styled.li`
     }
 
     &::before {
-      left: -77px;
+      left: -81px;
     }
+
+    ${media.lessThan("medium")`
+      left: 10px;
+
+      &::before {
+        left: -41px;
+      }
+    `}
   }
 `;
 
@@ -39,6 +56,16 @@ export const TimelineItemContainer = styled.div`
 
   padding: 0.5rem 1rem;
   border-radius: 5px;
+
+  ${media.between("medium", "large")`
+    max-width: 160px;
+    min-width: 160px;
+  `}
+
+  ${media.lessThan("medium")`
+    max-width: 140px;
+    min-width: 140px;
+  `}
 
   time {
     font-size: 0.75rem;
@@ -82,5 +109,10 @@ export const TimelineItemContainer = styled.div`
     border-radius: 30px;
     top: calc(50% - 17px);
     z-index: 1;
+
+    ${media.lessThan("medium")`
+      width: 20px;
+      height: 20px;
+  `}
   }
 `;
