@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/github-timeline/static/js/main.eab1652a.js",
+    "main.js": "/github-timeline/static/js/main.b1aa39e2.js",
     "index.html": "/github-timeline/index.html",
-    "main.eab1652a.js.map": "/github-timeline/static/js/main.eab1652a.js.map"
+    "main.b1aa39e2.js.map": "/github-timeline/static/js/main.b1aa39e2.js.map"
   },
   "entrypoints": [
-    "static/js/main.eab1652a.js"
+    "static/js/main.b1aa39e2.js"
   ]
 }
