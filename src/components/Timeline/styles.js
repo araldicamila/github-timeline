@@ -31,3 +31,23 @@ export const FlagYear = styled.div`
     margin: 0 0 5px;
   }
 `;
+
+export const NoDataContainer = styled.div`
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace !important;
+
+  p {
+    color: var(--pink);
+    text-transform: uppercase;
+  }
+
+  a {
+    color: var(--blue);
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+`;

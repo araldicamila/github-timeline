@@ -1,4 +1,4 @@
-import { HeaderTimelineContainer } from "./styled";
+import { HeaderTimelineContainer } from "./styles";
 
 export const HeaderTimeline = ({ username, onClickBack }) => {
   return (

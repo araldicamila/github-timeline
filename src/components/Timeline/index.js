@@ -1,8 +1,8 @@
 import { TimelineItem } from "../TimelineItem";
-import { FlagYear, TimelineContainer } from "./styles";
+import { FlagYear, NoDataContainer, TimelineContainer } from "./styles";
 
 export const Timeline = ({ list }) => {
-  return (
+  return list && list.length > 0 ? (
     <TimelineContainer>
       {list &&
         list.map((content, index) => (
@@ -24,5 +24,12 @@ export const Timeline = ({ list }) => {
           </>
         ))}
     </TimelineContainer>
+  ) : (
+    <NoDataContainer>
+      <p>You don't have any repository 😥</p>
+      <a href="https://github.com/new" target="_blank">
+        Create your first repository
+      </a>
+    </NoDataContainer>
   );
 };
