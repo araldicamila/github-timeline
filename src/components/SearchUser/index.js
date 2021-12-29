@@ -28,11 +28,16 @@ export const SearchUser = ({ onClickSearch, user, setUser }) => {
       <label>Username</label>
       <WrapperInput>
         <span>
-          →{" "}
           <input
             onChange={(e) => setUser(e.target.value)}
             value={user}
             autoFocus
+            aria-label="input-username"
+            onKeyPress={(event) => {
+              if (event.key === "Enter") {
+                onClickSearch();
+              }
+            }}
           />
         </span>
 

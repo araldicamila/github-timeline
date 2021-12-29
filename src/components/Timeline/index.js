@@ -1,5 +1,5 @@
 import { TimelineItem } from "../TimelineItem";
-import { TimelineBar, TimelineContainer } from "./styles";
+import { TimelineContainer } from "./styles";
 
 export const Timeline = ({ list }) => {
   return (
@@ -7,6 +7,7 @@ export const Timeline = ({ list }) => {
       {list &&
         list.map((item) => (
           <TimelineItem
+            key={item.name}
             name={item.name}
             description={item.description}
             createdAt={item.created_at}

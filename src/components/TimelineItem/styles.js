@@ -76,7 +76,7 @@ export const TimelineItemContainer = styled.div`
     width: 30px;
     height: 30px;
 
-    background-color: var(--yellow);
+    background-color: var(--purple);
     border: 5px solid var(--dark-background);
     position: absolute;
     border-radius: 30px;

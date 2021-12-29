@@ -15,6 +15,9 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
 
     box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
   } 
   
   main {
@@ -27,6 +30,8 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    font-family: 'Poppins', sans-serif;
   }
 
   time {

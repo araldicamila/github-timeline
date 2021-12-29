@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getUserRepos } from "./api/repositories";
+import { HeaderTimeline } from "./components/HeaderTimeline";
 import { SearchUser } from "./components/SearchUser";
 import { Timeline } from "./components/Timeline";
 import { TimelineItem } from "./components/TimelineItem";
@@ -38,7 +39,10 @@ function App() {
           setUser={setUser}
         />
       ) : (
-        <Timeline list={repositories} />
+        <>
+          <HeaderTimeline username={user} />
+          <Timeline list={repositories} />
+        </>
       )}
     </main>
   );
