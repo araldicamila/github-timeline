@@ -14,10 +14,15 @@ export const ContainerSearchUser = styled.div`
     min-width: 200px;
   `}
 
+  p {
+    color: var(--yellow);
+  }
+
   span,
   input,
   label,
-  button {
+  button,
+  p {
     font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
       Liberation Mono, monospace !important;
   }
@@ -70,6 +75,6 @@ export const WrapperInput = styled.div`
 
     caret-color: var(--white);
     color: var(--white);
-    ]font-size: 1rem;
+    font-size: 1rem;
   }
 `;

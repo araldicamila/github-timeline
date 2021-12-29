@@ -1,50 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import media from "styled-media-query";
 
 export const TimelineItemList = styled.li`
   list-style-type: none;
   position: relative;
   min-height: 200px;
-
-  &:nth-child(odd) div {
-    right: 45px;
-
-    &::after {
-      right: -7.5px;
-    }
-
-    &::before {
-      right: -81px;
-    }
-
-    ${media.lessThan("medium")`
-      right: 10px;
-
-      &::before {
-        right: -41px;
-      }
-    `}
-  }
-
-  &:nth-child(even) div {
-    left: 45px;
-
-    &::after {
-      left: -7.5px;
-    }
-
-    &::before {
-      left: -81px;
-    }
-
-    ${media.lessThan("medium")`
-      left: 10px;
-
-      &::before {
-        left: -41px;
-      }
-    `}
-  }
 `;
 
 export const TimelineItemContainer = styled.div`
@@ -115,4 +75,48 @@ export const TimelineItemContainer = styled.div`
       height: 20px;
   `}
   }
+
+  ${({ odd }) =>
+    odd &&
+    css`
+    right: 45px;
+
+    &::after {
+      right: -7.5px;
+    }
+
+    &::before {
+      right: -81px;
+    }
+
+    ${media.lessThan("medium")`
+      right: 10px;
+
+      &::before {
+        right: -41px;
+      }
+    `}
+  }`};
+
+  ${({ odd }) =>
+    !odd &&
+    css`
+      left: 45px;
+
+      &::after {
+        left: -7.5px;
+      }
+
+      &::before {
+        left: -81px;
+      }
+
+      ${media.lessThan("medium")`
+      left: 10px;
+
+      &::before {
+        left: -41px;
+      }
+    `}
+    `}
 `;

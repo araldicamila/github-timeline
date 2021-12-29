@@ -5,15 +5,16 @@ export const Timeline = ({ list }) => {
   return (
     <TimelineContainer>
       {list &&
-        list.map((content) => (
+        list.map((content, index) => (
           <>
             <FlagYear>
               <p>⭐ {content.year} ⭐</p>
             </FlagYear>
 
             {content.items &&
-              content.items.map((item) => (
+              content.items.map((item, idx) => (
                 <TimelineItem
+                  sum={idx + index}
                   key={item.name}
                   name={item.name}
                   description={item.description}

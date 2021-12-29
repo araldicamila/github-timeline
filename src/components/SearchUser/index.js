@@ -1,7 +1,13 @@
 import { useEffect, useRef } from "react";
 import { ContainerSearchUser, WrapperInput } from "./styles";
 
-export const SearchUser = ({ onClickSearch, user, setUser }) => {
+export const SearchUser = ({
+  error,
+  onClickSearch,
+  user,
+  setUser,
+  setError,
+}) => {
   const spanRef = useRef();
   let i = 0;
   const text = "Welcome! Let's see your github timeline!";
@@ -38,12 +44,18 @@ export const SearchUser = ({ onClickSearch, user, setUser }) => {
               if (event.key === "Enter") {
                 onClickSearch();
               }
+
+              if (error) {
+                setError(false);
+              }
             }}
           />
         </span>
 
         <button onClick={onClickSearch}>Pesquisar</button>
       </WrapperInput>
+
+      {error ? <p>This username doesn't exists 😥</p> : null}
     </ContainerSearchUser>
   );
 };
