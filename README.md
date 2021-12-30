@@ -1,5 +1,7 @@
 Site: https://araldicami.github.io/github-timeline/
 
+Challenge: https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/GitHub-Timeline-App.md
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### `npm start` or `yarn start`
