@@ -52,7 +52,7 @@ export const SearchUser = ({
           />
         </span>
 
-        <button onClick={onClickSearch}>Pesquisar</button>
+        <button onClick={onClickSearch}>Search</button>
       </WrapperInput>
 
       {error ? <p>This username doesn't exists 😥</p> : null}
