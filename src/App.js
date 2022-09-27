@@ -40,6 +40,8 @@ function App() {
                 ],
               });
             }
+
+            return item;
           });
 
           setRepositories(repos);

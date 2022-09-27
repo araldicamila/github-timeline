@@ -27,7 +27,7 @@ export const Timeline = ({ list }) => {
   ) : (
     <NoDataContainer>
       <p>You don't have any repository 😥</p>
-      <a href="https://github.com/new" target="_blank">
+      <a href="https://github.com/new" target="_blank" rel="noreferrer">
         Create your first repository
       </a>
     </NoDataContainer>

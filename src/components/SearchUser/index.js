@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { ContainerSearchUser, WrapperInput } from "./styles";
 
 export const SearchUser = ({
@@ -13,20 +13,20 @@ export const SearchUser = ({
   const text = "Welcome! Let's see your github timeline!";
   const speed = 50;
 
-  useEffect(() => {
-    if (spanRef && spanRef.current) {
-      typeWriter();
-    }
-  }, []);
-
-  function typeWriter() {
+  const typeWriter = useCallback(() => {
     if (i < text.length) {
       spanRef.current.innerHTML += text.charAt(i);
       i++;
 
       setTimeout(typeWriter, speed);
     }
-  }
+  }, [i]);
+
+  useEffect(() => {
+    if (spanRef && spanRef.current) {
+      typeWriter();
+    }
+  }, [typeWriter]);
 
   return (
     <ContainerSearchUser>
